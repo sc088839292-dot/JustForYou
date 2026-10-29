@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Karwa Chauth ❤️</title>
+<meta name="theme-color" content="#590018">
+<title>Happy Karwa Chauth ❤️🌙</title>
 
 <style>
 * {
@@ -17,7 +18,7 @@ body {
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
   color: #fff8e7;
-  background: linear-gradient(145deg, #390012, #800d28, #26000e);
+  background: linear-gradient(145deg, #30000d, #800d28, #3b0016);
   overflow-x: hidden;
 }
 
@@ -32,33 +33,33 @@ body {
     radial-gradient(2px 2px at 35% 80%, #fff5ce 50%, transparent),
     radial-gradient(2px 2px at 55% 45%, #fff5ce 50%, transparent);
   background-size: 180px 180px;
-  opacity: 0.65;
+  opacity: .7;
   animation: twinkle 4s infinite alternate;
 }
 
 @keyframes twinkle {
-  from { opacity: 0.3; }
-  to { opacity: 0.85; }
+  from { opacity: .3; }
+  to { opacity: .85; }
 }
 
 .container {
   position: relative;
   width: min(92%, 650px);
-  margin: 0 auto;
-  padding: 45px 0;
+  margin: auto;
+  padding: 38px 0 45px;
   text-align: center;
 }
 
 .moon {
-  font-size: 75px;
+  font-size: 76px;
   margin-bottom: 12px;
   filter: drop-shadow(0 0 20px #ffe7a0);
-  animation: glow 3s infinite alternate;
+  animation: moonGlow 3s infinite alternate;
 }
 
-@keyframes glow {
+@keyframes moonGlow {
   from { filter: drop-shadow(0 0 8px #ffd36b); }
-  to { filter: drop-shadow(0 0 25px #fff0b0); }
+  to { filter: drop-shadow(0 0 28px #fff0b0); }
 }
 
 .top-line {
@@ -77,9 +78,9 @@ h1 {
 }
 
 .subtitle {
-  margin-top: 15px;
+  margin-top: 16px;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #ffe9dc;
 }
 
@@ -88,25 +89,25 @@ h1 {
   padding: 28px 22px;
   border: 1px solid #e6bd70;
   border-radius: 22px;
-  background: rgba(255, 245, 224, 0.08);
-  box-shadow: 0 0 30px rgba(255, 191, 91, 0.13);
+  background: rgba(255, 245, 224, .08);
+  box-shadow: 0 0 30px rgba(255, 191, 91, .15);
   backdrop-filter: blur(6px);
 }
 
 .heart {
-  font-size: 35px;
-  margin-bottom: 15px;
+  font-size: 38px;
+  margin-bottom: 14px;
 }
 
 h2 {
   color: #ffdc91;
-  font-size: 27px;
+  font-size: 26px;
   margin-bottom: 18px;
 }
 
 .wish {
-  font-size: 18px;
-  line-height: 1.9;
+  font-size: 17px;
+  line-height: 1.95;
   color: #fff4e9;
 }
 
@@ -120,8 +121,8 @@ h2 {
   margin-top: 22px;
   padding: 23px 19px;
   border-radius: 18px;
-  background: rgba(40, 0, 12, 0.42);
-  border: 1px solid rgba(255, 220, 145, 0.4);
+  background: rgba(40, 0, 12, .42);
+  border: 1px solid rgba(255, 220, 145, .4);
 }
 
 .wish-box p {
@@ -129,34 +130,111 @@ h2 {
   line-height: 1.9;
 }
 
-.wish-box .emoji {
-  font-size: 27px;
-  margin-bottom: 10px;
+.emoji {
+  font-size: 30px;
+  margin-bottom: 12px;
 }
 
-.footer {
-  margin-top: 30px;
-  color: #ffdda0;
-  font-size: 16px;
+/* Spread Some Love button */
+.love-button {
+  display: block;
+  margin: 30px auto 12px;
+  padding: 16px 28px;
+  border: 2px solid #ffe5a3;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffcf70, #ff668b, #b51648);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 0 25px #ff7ca088;
+  animation: pulseLove 1.7s infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes pulseLove {
+  50% { transform: scale(1.05); }
+}
+
+.love-button:active {
+  transform: scale(.95);
+}
+
+.love-message {
+  display: none;
+  margin: 18px auto;
+  padding: 16px;
+  color: #ffe4a1;
+  font-size: 18px;
   line-height: 1.8;
+  animation: messageAppear .5s ease;
+}
+
+.love-message.show {
+  display: block;
+}
+
+@keyframes messageAppear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Flying hearts, flowers, moons and stars */
+.flying-love {
+  position: fixed;
+  bottom: -65px;
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  animation: flyUp var(--duration) ease-out forwards;
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(.5);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  80% { opacity: .95; }
+  100% {
+    transform:
+      translate3d(var(--drift), -115vh, 0)
+      rotate(var(--spin)) scale(1.45);
+    opacity: 0;
+  }
 }
 
 .diya {
-  font-size: 36px;
-  margin-top: 24px;
+  font-size: 38px;
+  margin-top: 25px;
   animation: flicker 1.5s infinite alternate;
 }
 
 @keyframes flicker {
-  from { opacity: 0.75; }
+  from { opacity: .75; }
   to { opacity: 1; }
 }
 
+.footer {
+  margin-top: 25px;
+  color: #ffdda0;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
 @media (max-width: 480px) {
-  .container { padding: 32px 0; }
+  .container { padding-top: 28px; }
   .card { padding: 24px 16px; }
-  .wish { font-size: 16px; }
-  .wish-box p { font-size: 16px; }
+  .wish, .wish-box p { font-size: 16px; }
+  .love-button { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stars, .moon, .diya, .love-button {
+    animation: none;
+  }
 }
 </style>
 </head>
@@ -173,7 +251,7 @@ h2 {
   <h1>Happy Karwa Chauth ❤️</h1>
 
   <p class="subtitle">
-    Chand ki roshni, dil mein pyaar,<br>
+    Chaand ki roshni, dil mein pyaar,<br>
     aur saath ho apne humsafar ka har baar. ✨
   </p>
 
@@ -230,6 +308,13 @@ h2 {
     </p>
   </section>
 
+  <!-- Love animation button -->
+  <button class="love-button" onclick="spreadLove()">
+    💖 Spread Some Love 💖
+  </button>
+
+  <p id="love-message" class="love-message" aria-live="polite"></p>
+
   <div class="diya">🪔</div>
 
   <footer class="footer">
@@ -239,5 +324,81 @@ h2 {
   </footer>
 
 </main>
+
+<script>
+const loveEmojis = [
+  "❤️", "💖", "💕", "💗", "💘", "💝", "💞",
+  "🌙", "🌹", "🌸", "🌺", "🌷", "💐", "🌼",
+  "✨", "⭐", "💫", "🪔", "💋", "🥰", "😍",
+  "🦋", "💓", "♥️", "🌟", "🌻", "💌"
+];
+
+const loveMessages = [
+  "❤️ Tumhari muskurahat meri duniya ki sabse khoobsurat cheez hai. Hamesha khush raho!",
+  "🌙 Is chaandni raat par dua hai ki tumhari zindagi pyaar aur khushiyon se roshan rahe.",
+  "💖 Sachcha pyaar ek doosre ki care karne aur har haal mein saath nibhane mein hai.",
+  "🌹 Har din tumhein yaad dilaye ki tum kitne special ho. Happy Karwa Chauth!",
+  "💑 Haath mein haath, dil se dil ka saath—yahi hai pyaar ki sabse khoobsurat baat.",
+  "💋 Chaand sitaron se bhi khoobsurat ho tumhari duniya, aur pyaar se bhara rahe tumhara har din.",
+  "💕 Dua hai ki har Karwa Chauth tumhare liye dher saari khushiyan aur pyaar lekar aaye."
+];
+
+let animationRunning = false;
+
+function spreadLove() {
+  const messageElement = document.getElementById("love-message");
+
+  const message =
+    loveMessages[Math.floor(Math.random() * loveMessages.length)];
+
+  messageElement.textContent = message;
+  messageElement.classList.remove("show");
+
+  void messageElement.offsetWidth;
+  messageElement.classList.add("show");
+
+  // Prevent too many animations piling up on slow phones.
+  // Every click still creates a big burst of 100 emojis.
+  if (animationRunning) return;
+
+  animationRunning = true;
+
+  for (let i = 0; i < 100; i++) {
+    const item = document.createElement("span");
+    item.className = "flying-love";
+
+    item.textContent =
+      loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (18 + Math.random() * 28) + "px";
+    item.style.setProperty(
+      "--duration",
+      (3 + Math.random() * 3.5) + "s"
+    );
+    item.style.setProperty(
+      "--drift",
+      (Math.random() * 280 - 140) + "px"
+    );
+    item.style.setProperty(
+      "--spin",
+      (Math.random() * 900 - 450) + "deg"
+    );
+
+    // Stagger the launch for a fuller fountain effect.
+    item.style.animationDelay = (Math.random() * 1.2) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 8500);
+  }
+
+  setTimeout(() => {
+    animationRunning = false;
+  }, 7000);
+}
+</script>
+
 </body>
-</html>
+      </html>
+    
