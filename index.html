@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#410b1c">
+<title>Karwa Chauth Special 🌙</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:#fff0d9;
+  font-family:Georgia,"Noto Serif Devanagari",serif;
+  background:radial-gradient(ellipse at top,#84243d,#400d20 50%,#170710);
+}
+#stars{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+main{position:relative;z-index:1;max-width:850px;margin:auto;padding:25px 17px 45px;text-align:center}
+.tag{
+  display:inline-block;padding:9px 17px;border:1px solid #e9bd6b88;
+  border-radius:30px;color:#ffdf98;font:12px Arial;letter-spacing:2px
+}
+h1{
+  margin-top:25px;font-size:clamp(38px,9vw,68px);line-height:1.15;
+  color:#ffe0a0;text-shadow:0 0 25px #ffbb5b66
+}
+.intro{margin-top:16px;line-height:1.9;color:#ffe8dc;font-size:17px}
+.moon-scene{height:285px;display:flex;justify-content:center;align-items:center;position:relative}
+.moon{
+  width:145px;height:145px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fffde7,#ffe3a0 55%,#d99d48);
+  box-shadow:0 0 30px #ffdf9eaa,0 0 90px #ffbd6144;
+  animation:float 4s ease-in-out infinite
+}
+@keyframes float{50%{transform:translateY(-12px)}}
+.orbit{position:absolute;width:220px;height:220px;border:1px solid #f4d18a55;border-radius:50%}
+.orbit:before,.orbit:after{content:"✦";position:absolute;color:#ffe0a0}
+.orbit:before{top:20px;right:15px}.orbit:after{bottom:20px;left:15px}
+.caption{position:absolute;bottom:5px;color:#ffdf98;font-size:14px}
+.card{
+  margin:22px auto;padding:27px 21px;max-width:640px;
+  border:1px solid #e9bd6b77;border-radius:24px;
+  background:linear-gradient(145deg,#ffffff12,#ffffff04);
+  box-shadow:0 12px 45px #0003
+}
+h2{color:#ffdf98;font-size:25px;margin-bottom:17px}
+p{font-size:16px;line-height:1.95;color:#ffebdf}
+.thali{
+  width:155px;height:155px;border-radius:50%;margin:25px auto;
+  display:flex;align-items:center;justify-content:center;font-size:65px;
+  border:5px double #e8bd62;
+  background:radial-gradient(circle,#a33242,#511020);
+  box-shadow:0 0 30px #f7c35c44,inset 0 0 20px #ffdc8333;
+  animation:glow 2.5s infinite alternate
+}
+@keyframes glow{to{box-shadow:0 0 40px #f7c35c88}}
+.diyas{display:flex;justify-content:center;gap:30px;margin:28px}
+.diya{font-size:38px;animation:flicker 1.2s infinite alternate}
+.diya:nth-child(2){animation-delay:.4s}.diya:nth-child(3){animation-delay:.8s}
+@keyframes flicker{to{transform:scale(1.1);filter:drop-shadow(0 0 12px orange)}}
+button{
+  display:inline-block;margin:8px 3px;padding:14px 22px;
+  border:1px solid #ffe3a2;border-radius:40px;
+  background:linear-gradient(135deg,#ffe4a0,#d8a042);
+  color:#4a1020;font-size:15px;font-weight:bold;cursor:pointer
+}
+button:active{transform:scale(.97)}
+.secondary{background:#ffffff0d;color:#ffe0a0;border-color:#e9bd6b99}
+.footer{margin-top:32px;color:#dcb9b7;font:12px Arial;letter-spacing:1.5px;line-height:2}
+.heart{position:fixed;bottom:-30px;z-index:2;pointer-events:none;animation:rise 5s linear forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+@media(max-width:480px){
+  .moon-scene{height:255px}.moon{width:125px;height:125px}
+  .orbit{width:195px;height:195px}.card{padding:23px 16px}
+}
+</style>
+</head>
+
+<body>
+<canvas id="stars"></canvas>
+
+<main>
+  <div class="tag">✦ PREM • PARAMPARA • KHUSHIYAAN ✦</div>
+
+  <h1>Karwa Chauth<br>Special 🌙</h1>
+
+  <p class="intro">
+    Chaand ki roshni, diyoon ki chamak,<br>
+    aur apno ke liye dil se nikli duaayein ❤️
+  </p>
+
+  <section class="moon-scene">
+    <div class="orbit"></div>
+    <div class="moon"></div>
+    <div class="caption">✧ Chaand sa roshan har khwaab ✧</div>
+  </section>
+
+  <section class="card">
+    <h2>🌹 Karwa Chauth ki Shubhkamnayein</h2>
+    <p>
+      Is khoobsurat tyohar par har ghar mein khushhaali ho,
+      har rishte mein pyaar aur vishwas ho, aur har dil mein
+      sukoon aur umeed ki roshni bani rahe.
+    </p>
+
+    <div class="thali">🪔</div>
+
+    <p>
+      Chaand ki thandak aur diye ki roshni ki tarah,
+      aapki zindagi bhi khushiyon se jagmagati rahe.
+      Aap sabhi ko Karwa Chauth ki dher saari shubhkamnayein!
+    </p>
+
+    <div class="diyas">
+      <span class="diya">🪔</span>
+      <span class="diya">🪔</span>
+      <span class="diya">🪔</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>💖 Pyaar aur Vishwas</h2>
+    <p>
+      Har khoobsurat rishte ki buniyad hoti hai izzat,
+      bharosa, samajh aur ek-doosre ki khushi.
+      Is Karwa Chauth par sabke jeevan mein prem,
+      sehat, sukoon aur muskurahatein bani rahein. 🌺
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>🌙 Ek Pyari Si Dua</h2>
+    <p>
+      Har aangan mein khushiyaan khilein,<br>
+      har chehre par muskaan mile,<br>
+      har rishta izzat se mehke,<br>
+      har dil ko sukoon mile. ❤️
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>📲 Is Website Ko Share Karein</h2>
+    <p>
+      Ye ek public Karwa Chauth greeting website hai.
+      Iska wahi ek link apne friends, family aur sabhi
+      apno ke saath share karein.
+    </p>
+
+    <button onclick="shareWebsite()">💌 Share Website Link</button>
+    <button class="secondary" onclick="copyWebsite()">🔗 Copy Link</button>
+    <p id="status" aria-live="polite" style="margin-top:12px;font-size:14px"></p>
+  </section>
+
+  <button class="secondary" onclick="makeHearts()">💗 Spread Some Love</button>
+
+  <div class="footer">
+    MADE WITH ❤️ FOR EVERYONE<br>
+    ✨ HAPPY KARWA CHAUTH ✨
+  </div>
+</main>
+
+<script>
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+let stars=[];
+
+function resize(){
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+  stars=Array.from({length:Math.min(120,Math.floor(canvas.width/5))},()=>({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*1.4+.3,
+    a:Math.random()*6
+  }));
+}
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  stars.forEach(s=>{
+    s.a+=.015;
+    ctx.globalAlpha=.3+Math.abs(Math.sin(s.a))*.7;
+    ctx.fillStyle="#ffe5a3";
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fill();
+  });
+  ctx.globalAlpha=1;
+  requestAnimationFrame(draw);
+}
+window.addEventListener("resize",resize);
+resize();
+draw();
+
+function getWebsiteLink(){
+  return "https://sc088839292-dot.github.io/Satish/";
+}
+
+async function shareWebsite(){
+  const url=getWebsiteLink();
+  const data={
+    title:"Karwa Chauth Special 🌙",
+    text:"🌙❤️ Karwa Chauth ki dher saari shubhkamnayein! Ye pyari si website dekhein aur apno ke saath share karein:",
+    url:url
+  };
+
+  if(navigator.share){
+    try{
+      await navigator.share(data);
+      return;
+    }catch(e){
+      if(e.name==="AbortError")return;
+    }
+  }
+
+  window.open("https://wa.me/?text="+encodeURIComponent(data.text+"\n"+url),"_blank");
+}
+
+async function copyWebsite(){
+  const url=getWebsiteLink();
+  const status=document.getElementById("status");
+
+  try{
+    await navigator.clipboard.writeText(url);
+    status.textContent="✅ Website ka same link copy ho gaya! Ab kisi ko bhi bhej sakte ho.";
+  }catch(e){
+    window.prompt("Is website link ko copy karo:",url);
+  }
+}
+
+function makeHearts(){
+  const symbols=["❤️","✨","🌹","💖","🌙"];
+  for(let i=0;i<16;i++){
+    const el=document.createElement("span");
+    el.className="heart";
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(16+Math.random()*20)+"px";
+    el.style.animationDuration=(4+Math.random()*3)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),7500);
+  }
+}
+</script>
+</body>
+</html>
